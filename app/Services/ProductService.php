@@ -7,7 +7,7 @@ use App\Repositories\ProductRepository;
 use App\Resources\ProductListResource;
 use App\Resources\ProductSingleResource;
 use Illuminate\Support\Facades\Cache;
-use Modules\Store\Transformers\StoreCategoryResource;
+
 
 class ProductService
 {
