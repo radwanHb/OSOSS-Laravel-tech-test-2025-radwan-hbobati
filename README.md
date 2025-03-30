@@ -68,7 +68,7 @@ Follow the prompts to set up your admin credentials.
 
 After creating the user, access the Filament dashboard at:
 
-[http://localhost:8000/admin](http://localhost:8000/admin)
+[http://localhost:8000/admin/login](http://localhost:8000/admin/login)
 
 Log in with the credentials you just created. From the dashboard, you can manage:
 
