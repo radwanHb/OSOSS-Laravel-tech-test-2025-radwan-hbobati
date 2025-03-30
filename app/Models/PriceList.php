@@ -99,9 +99,9 @@ class PriceList extends Model
                         ->whereNull('end_date');
                 });
             })
+            ->groupBy('product_id')
             ->orderBy('priority')
-            ->orderByDesc('start_date')
-            ->limit(1);
+            ->havingRaw('MIN(priority)');
 
     }
 

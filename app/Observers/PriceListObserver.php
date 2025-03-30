@@ -28,7 +28,7 @@ class PriceListObserver
      */
     public function deleted(PriceList $priceList): void
     {
-        //
+        Cache::tags(['products'])->flush();
     }
 
     /**

@@ -28,7 +28,7 @@ class ProductObserver
      */
     public function deleted(Product $product): void
     {
-        //
+        Cache::tags(['products'])->flush();
     }
 
     /**
