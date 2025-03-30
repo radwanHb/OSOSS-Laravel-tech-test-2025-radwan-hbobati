@@ -23,11 +23,11 @@ class PriceListsRelationManager extends RelationManager
         return $form
             ->schema([
                 Select::make('country_code')
-                    ->options(fn () => \App\Models\Country::pluck('code', 'name')->toArray())
+                    ->options(fn () => \App\Models\Country::pluck('code', 'code')->toArray())
                     ->searchable(),
 
                 Select::make('currency_code')
-                    ->options(fn () => \App\Models\Currency::pluck('code', 'name')->toArray())
+                    ->options(fn () => \App\Models\Currency::pluck('code', 'code')->toArray())
                     ->searchable(),
 
                 TextInput::make('price')->numeric()->required(),

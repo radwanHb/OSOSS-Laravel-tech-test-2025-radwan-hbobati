@@ -85,10 +85,11 @@ GET /api/products
 
 **Required Query Parameters**:
 
-- `country_code` (string, ISO)
-- `currency_code` (string, ISO)
-- `date` (YYYY-MM-DD)
+- `country_code` (string, ISO) required
+- `currency_code` (string, ISO) required
+- `date` (YYYY-MM-DD) required
 - `e.g.` (?country_code=US&currency_code=USD&date=2023-11-15)
+- `order` (lowest-to-highest , highest-to-lowest)
 
 This endpoint returns a list of products based on the provided query parameters.
 
@@ -100,10 +101,11 @@ GET /api/products/{product}
 
 **Required Query Parameters**:
 
-- `country_code` (string, ISO)
-- `currency_code` (string, ISO)
-- `date` (YYYY-MM-DD)
+- `country_code` (string, ISO) required
+- `currency_code` (string, ISO) required
+- `date` (YYYY-MM-DD) required
 - `e.g.` (?country_code=US&currency_code=USD&date=2023-11-15)
+
 
 This endpoint returns detailed information about a specific product.
 
