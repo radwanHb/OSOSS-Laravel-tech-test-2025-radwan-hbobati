@@ -14,8 +14,8 @@ class ProductRepository
 
         return $this->model::withApplicablePrice($countryCode, $currencyCode, $date)
                 ->addSelect('products.id', 'products.name', 'products.description')
-                ->when($order == ProductPriceOrderEnum::Desc->value, fn($query) => $query->orderBy('price'))
-                ->when($order == ProductPriceOrderEnum::Asc->value, fn($query) => $query->orderByDesc('price'))
+                ->when($order == ProductPriceOrderEnum::Asc->value, fn($query) => $query->orderBy('price'))
+                ->when($order == ProductPriceOrderEnum::Desc->value, fn($query) => $query->orderByDesc('price'))
                 ->when($pagination, fn($query) => $query->paginate($perPage), fn($query) => $query->get());
     }
 

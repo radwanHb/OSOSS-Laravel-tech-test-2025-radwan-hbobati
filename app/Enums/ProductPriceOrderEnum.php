@@ -5,9 +5,9 @@ namespace App\Enums;
 enum ProductPriceOrderEnum: string
 {
 
-    case Desc = 'lowest-to-highest';
+    case Desc = 'highest-to-lowest';
 
-    case Asc = 'highest-to-lowest';
+    case Asc = 'lowest-to-highest';
 
 
 }
