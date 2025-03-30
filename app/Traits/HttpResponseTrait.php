@@ -4,7 +4,7 @@ namespace App\Traits;
 
 trait HttpResponseTrait
 {
-    protected function success($message, $data = [], $errNum = 200)
+    protected function success( $data = [], $message = 'success', $errNum = 200)
     {
         return response([
             'status' => true,

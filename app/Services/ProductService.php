@@ -6,6 +6,7 @@ use App\Models\Product;
 use App\Repositories\ProductRepository;
 use App\Resources\ProductListResource;
 use App\Resources\ProductSingleResource;
+use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 use Illuminate\Support\Facades\Cache;
 
 
@@ -16,9 +17,17 @@ class ProductService
 
     public function __construct(protected ProductRepository $productRepository){}
 
+    /**
+     * @param string|null $countryCode
+     * @param string|null $currencyCode
+     * @param string|null $date
+     * @param $order
+     * @param bool $pagination
+     * @param $perPage
+     * @return AnonymousResourceCollection
+     */
     public function getProducts(string $countryCode = null, string|null $currencyCode = null, string|null $date = null, $order = null, bool $pagination = true, $perPage = 10)
     {
-
 
         $cacheKey = 'products_list_'.$countryCode.'_'.$currencyCode.'_'.$date.'_'.$order.'_'.$pagination.'_'.$perPage;
         $cacheTime = 60 * 60 * 24;
@@ -29,7 +38,14 @@ class ProductService
         return $this->indexResource::collection($data);
     }
 
-    public function getProduct(Product|int $product ,string $countryCode = null, string|null $currencyCode = null, string|null $date = null)
+    /**
+     * @param Product|int $product
+     * @param string|null $countryCode
+     * @param string|null $currencyCode
+     * @param string|null $date
+     * @return mixed
+     */
+    public function getProduct(Product|int $product , string $countryCode = null, string|null $currencyCode = null, string|null $date = null)
     {
         $product = $product instanceof Product ? $product : Product::findOrFail($product);
 
